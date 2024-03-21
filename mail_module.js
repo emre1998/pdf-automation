@@ -2,7 +2,7 @@ const nodemailer = require('nodemailer');
 
 async function sendEmail(receiverEmail, senderEmail, password, subject, message, attachmentPath, recipientName) {
   const transporter = nodemailer.createTransport({
-    service: 'gmail',
+    service: 'domain',
     auth: {
       user: senderEmail,
       pass: password
@@ -16,7 +16,7 @@ async function sendEmail(receiverEmail, senderEmail, password, subject, message,
     text: message,
     attachments: [
       {
-        filename: 'teklif.pdf',
+        filename: 'editted.pdf',
         path: attachmentPath
       }
     ]
@@ -27,12 +27,12 @@ async function sendEmail(receiverEmail, senderEmail, password, subject, message,
   console.log(`E-posta ${info.messageId} kimliğiyle gönderildi`);
 }
 
-const receiverEmail = " arya@arya-ai.com";
-const senderEmail = "kizilatesemrecan@gmail.com";
-const password = "qgow kafd rudf fgop";
-const subject = "Teklif Talebiniz";
-const recipientName = "UYY";
-const message = `Sayın ${recipientName},\n\nÖncelikle Arya-AI göstermiş olduğunuz ilgi için teşekkür ederiz.\n\nEkte görüştüğümüz kapsamda oluşturduğumuz teklifi bulabilirsiniz.\n\nTeklif olurunuz geldiği gün iş planına süreçleriniz dahil edilecektir\n\nSaygılarımızla`;
-const attachmentPath = "TEKLIF.pdf";
+const receiverEmail = " receiver@domain.com";
+const senderEmail = "sender@domain.com";
+const password = "password";
+const subject = "Subject";
+const recipientName = "Who";
+const message = `Sayın ${recipientName},\n\content \n what you write.`;
+const attachmentPath = "editted.pdf";
 
 sendEmail(receiverEmail, senderEmail, password, subject, message, attachmentPath, recipientName);
