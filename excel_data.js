@@ -45,7 +45,7 @@ async function postData(url, requestData) {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'x-api-key': 'kizilatesemrecan@gmail.com_3y6C627YfV992iOE63qzv3s9Xg9wEtGIpD13o9k0J7HVB8JTLmrfqefFeZt8q7A7' 
+        'x-api-key': 'your_key' 
       },
       body: JSON.stringify(requestData)
     });
@@ -59,14 +59,14 @@ async function postData(url, requestData) {
 
 
 const requestData = {
-  url: "filetoken://a1730a307a23da89e24a5b8c2e7f3369a4834e77bf44c1707f",
-  searchStrings: ["ŞİRKET ADI( D kolonu)", "Seren Hanım (E ve F kolonu)", "A kolunu", "G Kolonu", "M kolunu L kolu"],
-  replaceStrings: [cellValues[1], cellValues[2] + ' ' + cellValues[3], cellValues[0], cellValues[4] + ' VE ' + cellValues[5], cellValues[6] + ' ' + cellValues[7] + ' VE' + cellValues[8] + ' ' + cellValues[9]],
+  url: "file url",
+  searchStrings: "search text",
+  replaceStrings: "replaced text",
   caseSensitive: true,
   replacementLimit: 1,
   pages: "",
   password: "",
-  name: "TEKLIF",
+  name: "editted",
 };
 
 postData('https://api.pdf.co/v1/pdf/edit/replace-text', requestData);
